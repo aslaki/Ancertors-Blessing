@@ -6,6 +6,7 @@ public class MeleeEnemy : MonoBehaviour
 {
     [SerializeField] float speed;
     Transform targetDestination;
+    private PlayerController playerController;
 
     Rigidbody2D rgdbd2d;
 
@@ -22,8 +23,15 @@ public class MeleeEnemy : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D collision){
-        if(collision.gameObject.GetComponent<PlayerCharacter>()){
-            Attack();
+        if(collision.gameObject.GetComponent<PlayerController>()){
+            playerController = collision.gameObject.GetComponent<PlayerController>();
+            if(!playerController.isImmune)
+            {
+                playerController.currentHP-=1;
+                playerController.GoImmune();
+                Debug.Log(playerController.isImmune);
+                Debug.Log(playerController.currentHP);
+            }
         }
     }
 

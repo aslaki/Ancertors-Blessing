@@ -21,6 +21,12 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;
     public GameObject bulletPrefab;
 
+    public Boolean isImmune;
+    public int immuneForSeconds;
+    public int maxHP;
+    public int currentHP;
+
+
     public float weaponCooldownDuration = 0.5f;
     public float bulletSpawnOffset = 0.5f;
     public float bulletVelocity = 2.0f;
@@ -39,6 +45,9 @@ public class PlayerController : MonoBehaviour
             playerCamera = Camera.main;
             Assert.IsNotNull(playerCamera);
         }
+
+        isImmune = false;
+        currentHP = maxHP;
     }
 
     // Update is called once per frame
@@ -112,5 +121,14 @@ public class PlayerController : MonoBehaviour
         isWeaponOnCooldown = false;
     }
 
+    public void GoImmune()
+    {
+        StartCoroutine(ImmunityControl());
+    }
 
+    private IEnumerator ImmunityControl(){
+        isImmune = true;
+        yield return new WaitForSeconds(immuneForSeconds);
+        isImmune = false;
+    }
 }
