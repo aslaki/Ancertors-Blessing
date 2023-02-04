@@ -25,4 +25,20 @@ public class GameManager : MonoBehaviour
         var seconds = Mathf.FloorToInt(_levelEndTimer.TimeLeft % 60);
         uiManager.LevelTimerText = $"{minutes:00}:{seconds:00}";
     }
+
+    public void GameOver(bool isVictory){
+        if (isVictory){
+            Victory();
+        } else {
+            Loss();
+        }
+    }
+
+    private void Victory(){
+        Debug.Log("VICTORY!");
+    }
+
+    private void Loss(){
+        Debug.Log("LOSS!");
+    }
 }
