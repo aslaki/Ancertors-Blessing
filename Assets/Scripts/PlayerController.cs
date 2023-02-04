@@ -152,6 +152,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void IncreaseFireRate() {
+        
+    }
+
     public void Heal(){
         if (currentHP <=6)
         {

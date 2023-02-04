@@ -13,9 +13,19 @@ public class GameManager : MonoBehaviour
     public EnemySpawner enemySpawner;
 
     public GameObject[] Enemies;
+
+    public int currentRound;
+    public bool gameIsPaused;
+
+    public GameObject[] levelUpSkills;
+
     // Start is called before the first frame update
     void Start()
     {
+        for (int i=0; i<levelUpSkills.Length; i++){
+            levelUpSkills[i].SetActive(true);
+        }
+        currentRound = 1;
         uiManager = FindObjectOfType<UIManager>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         Assert.IsNotNull(uiManager);
@@ -30,6 +40,9 @@ public class GameManager : MonoBehaviour
         _levelEndTimer.Update(Time.deltaTime);
         _spawnEnemyTimer.Update(Time.deltaTime);
         var minutes = Mathf.FloorToInt(_levelEndTimer.TimeLeft / 60);
+        if (currentRound == 1 ){
+            minutes +=1;
+        }
         var seconds = Mathf.FloorToInt(_levelEndTimer.TimeLeft % 60);
         uiManager.LevelTimerText = $"{minutes:00}:{seconds:00}";
         if (_spawnEnemyTimer.HasElapsed)
@@ -39,7 +52,44 @@ public class GameManager : MonoBehaviour
             var enemyIndex = Random.Range(0, Enemies.Length);
             enemySpawner.SpawnEnemy(Enemies[enemyIndex]);
         }
+
+        if (_levelEndTimer.HasElapsed){
+            if(currentRound == 1){
+                LevelUp();
+            } else if(currentRound == 2){
+                GameOver(true);
+            }
+        }
         
+    }
+
+    private void LevelUp(){
+        Time.timeScale = 0;
+        gameIsPaused = true;
+        for (int i=0; i<levelUpSkills.Length; i++){
+            levelUpSkills[i].SetActive(true);
+        }
+    }
+
+    public void GoToRound2(){
+
+        for (int i=0; i<levelUpSkills.Length; i++){
+            levelUpSkills[i].SetActive(false);
+        }
+        currentRound = 2;
+        _levelEndTimer.Start(1.0f * 60.0f);
+        Time.timeScale = 1;
+        gameIsPaused = false;
+    }
+
+    public void ChooseSkillHeal(){
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Heal();
+        GoToRound2();
+    }
+
+    public void ChooseSkillFireRate(){
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().IncreaseFireRate();
+        GoToRound2();
     }
 
     public void GameOver(bool isVictory){
