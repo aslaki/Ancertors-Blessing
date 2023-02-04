@@ -14,6 +14,7 @@ public class Timer
     public void Start(float duration)
     {
         _duration = duration;
+        _timer = 0.0f;
     }
 
     public void Update(float deltaTime)
