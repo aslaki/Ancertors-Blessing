@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class MeleeEnemy : MonoBehaviour
     Transform targetDestination;
     private PlayerController playerController;
 
+    public Animator animator;
     Rigidbody2D rgdbd2d;
 
     private void Awake(){
@@ -18,13 +20,23 @@ public class MeleeEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rgdbd2d.velocity = direction * speed;
+        Vector3 directionVector = (targetDestination.position - transform.position).normalized;
+        var facingDirection = Utils.GetHorizontalDirection(directionVector);
+        var scale = transform.localScale;
+        if (facingDirection == Utils.Direction.Left)
+            transform.localScale = new Vector3(-1 * MathF.Abs(scale.x), 
+                scale.y, scale.z);
+        else
+            transform.localScale = new Vector3(MathF.Abs(scale.x), 
+                scale.y, scale.z);
+        
+        rgdbd2d.velocity = directionVector * speed;
     }
 
     private void OnCollisionStay2D(Collision2D collision){
         if(collision.gameObject.GetComponent<PlayerController>()){
             playerController = collision.gameObject.GetComponent<PlayerController>();
+            animator.SetBool("IsAttacking", true);
             if(!playerController.isImmune)
             {
                 playerController.currentHP-=1;
@@ -35,7 +47,10 @@ public class MeleeEnemy : MonoBehaviour
         }
     }
 
-    private void Attack(){
-        Debug.Log("Attacking the player.");
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.gameObject.GetComponent<PlayerController>()){
+            animator.SetBool("IsAttacking", false);
+        }
     }
 }
