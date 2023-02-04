@@ -20,9 +20,4 @@ public class Timer
     {
         _timer += deltaTime;
     }
-    
-    public void ToString()
-    {
-        Console.WriteLine("Timer: " + _timer + " Duration: " + _duration);
-    }
 }

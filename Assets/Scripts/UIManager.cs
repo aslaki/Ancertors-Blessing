@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     {
         set
         {
-            _levelTimerText = $"{timerPrefix}: {value}";
+            _levelTimerText = $"{timerPrefix} {value}";
             levelTimerUI.text = _levelTimerText;
         }
     }
