@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    private GameManager gameManager;
+    public Image[] currentHeartsUI;
+
     private bool isUpPressed;
     private bool isDownPressed;
     private bool isLeftPressed;
@@ -51,8 +55,11 @@ public class PlayerController : MonoBehaviour
             Assert.IsNotNull(playerCamera);
         }
 
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
         isImmune = false;
         currentHP = maxHP;
+        RerenderHPUI();
     }
 
     // Update is called once per frame
@@ -132,6 +139,34 @@ public class PlayerController : MonoBehaviour
         isWeaponOnCooldown = true;
         yield return new WaitForSeconds(weaponCooldownDuration);
         isWeaponOnCooldown = false;
+    }
+
+    private void RerenderHPUI(){
+        for(int i=0; i<currentHeartsUI.Length; i++)
+        {
+            if(i+1 <= currentHP){
+                currentHeartsUI[i].enabled = true;
+            } else {
+                currentHeartsUI[i].enabled = false;
+            }
+        }
+    }
+
+    public void Heal(){
+        if (currentHP <=6)
+        {
+            currentHP+=1;
+            RerenderHPUI();
+        }
+    }
+
+    public void TakeDamage(){
+        currentHP -=1;
+        RerenderHPUI();
+        if(currentHP >= 0)
+        {
+            gameManager.GameOver(false);
+        }
     }
 
     public void GoImmune()
