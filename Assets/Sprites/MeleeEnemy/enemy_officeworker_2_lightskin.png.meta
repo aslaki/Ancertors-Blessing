@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 405518ef9ca4f4c2dab8981736e3f955
+guid: fc1e742f31bbe3d41aa9bd0ee8e93e00
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: druid_walk_0
+      name: enemy_officeworker_2_lightskin_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 73
-        height: 40
+        x: 8
+        y: 2
+        width: 22
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34c822594476ca34391fd69a093080ac
-      internalID: -1448678188
+      spriteID: 58f6524cf1de12f4790cb078138be845
+      internalID: 827698860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: druid_walk_1
+      name: enemy_officeworker_2_lightskin_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 3
-        width: 73
-        height: 40
+        x: 46
+        y: 2
+        width: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29513819a8a5312498f1c5bb273999a5
-      internalID: -1870487769
+      spriteID: 01c3666a5bf27a74aa745d01ff7686e6
+      internalID: 2051959536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: druid_walk_2
+      name: enemy_officeworker_2_lightskin_2
       rect:
         serializedVersion: 2
-        x: 161
-        y: 3
-        width: 65
-        height: 40
+        x: 83
+        y: 2
+        width: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1c98065a3f2a144956c343383a79a6
-      internalID: -1814658459
+      spriteID: 2b06c7e470148924599215f7b94a8a93
+      internalID: -71058665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: druid_walk_3
+      name: enemy_officeworker_2_lightskin_3
       rect:
         serializedVersion: 2
-        x: 238
-        y: 3
-        width: 64
-        height: 40
+        x: 121
+        y: 2
+        width: 20
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac29e4b922b7e0409e77fa16b3f4412
-      internalID: 1801529244
+      spriteID: 3d28f6a42a1e65b4da1afdc1255538c7
+      internalID: 1150215390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: druid_walk_4
+      name: enemy_officeworker_2_lightskin_4
       rect:
         serializedVersion: 2
-        x: 315
-        y: 3
-        width: 59
-        height: 40
+        x: 157
+        y: 2
+        width: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 120ffc72f58cf7f499f0273b4cbf75f3
-      internalID: -1497502861
+      spriteID: 6aa6230729af7e9469b58fdbee479256
+      internalID: -1042501764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: druid_walk_5
+      name: enemy_officeworker_2_lightskin_5
       rect:
         serializedVersion: 2
-        x: 392
-        y: 3
-        width: 64
-        height: 40
+        x: 194
+        y: 2
+        width: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d52068fcfb2bfea4ba48f7cc361a9ff0
-      internalID: 471556802
+      spriteID: cc0d0621491f23447ae4d1135c24acbe
+      internalID: 1186965510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: druid_walk_6
+      name: enemy_officeworker_2_lightskin_6
       rect:
         serializedVersion: 2
-        x: 469
-        y: 3
-        width: 65
-        height: 40
+        x: 231
+        y: 2
+        width: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,29 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e5a1f99f08aa214fb525de521def511
-      internalID: 1399847928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: druid_walk_7
-      rect:
-        serializedVersion: 2
-        x: 542
-        y: 3
-        width: 73
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a009412a9ceac24eaaf784cdf089a4d
-      internalID: 368192244
+      spriteID: a2a80af8c73549c4e96b59fb812b1bd6
+      internalID: 1353335136
       vertices: []
       indices: 
       edges: []
@@ -295,14 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      druid_walk_5: 471556802
-      druid_walk_2: -1814658459
-      druid_walk_1: -1870487769
-      druid_walk_6: 1399847928
-      druid_walk_3: 1801529244
-      druid_walk_0: -1448678188
-      druid_walk_4: -1497502861
-      druid_walk_7: 368192244
+      enemy_officeworker_2_lightskin_6: 1353335136
+      enemy_officeworker_2_lightskin_0: 827698860
+      enemy_officeworker_2_lightskin_2: -71058665
+      enemy_officeworker_2_lightskin_4: -1042501764
+      enemy_officeworker_2_lightskin_1: 2051959536
+      enemy_officeworker_2_lightskin_5: 1186965510
+      enemy_officeworker_2_lightskin_3: 1150215390
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
