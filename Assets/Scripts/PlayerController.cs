@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public float weaponCooldownDuration = 0.5f;
     public float bulletSpawnOffset = 0.5f;
-    public float bulletVeloity = 2.0f;
+    public float bulletVelocity = 2.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -50,8 +51,9 @@ public class PlayerController : MonoBehaviour
         isShootBtnPressed = Input.GetKey(KeyCode.Space);
         
         var mousePosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
-        shootDirection = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y).normalized;
-        Debug.DrawLine(shootDirection, transform.position, Color.red);
+        var position = transform.position.ToVector2();
+        shootDirection = new Vector2(mousePosition.x - position.x, mousePosition.y - position.y).normalized;
+        Debug.DrawLine(position, position + (shootDirection * 2.0f), Color.red);
     }
 
 
@@ -80,6 +82,16 @@ public class PlayerController : MonoBehaviour
             newVelocity.x = -velocity.x;
         }
         body.velocity = newVelocity;
+        // Flip sprite based on direction
+        var facingDirection = Utils.GetHorizontalDirection(shootDirection);
+        var scale = transform.localScale;
+        if (facingDirection == Utils.Direction.Left)
+            transform.localScale = new Vector3(-1 * MathF.Abs(scale.x), 
+                scale.y, scale.z);
+        else
+            transform.localScale = new Vector3(MathF.Abs(scale.x), 
+                scale.y, scale.z);
+        
     }
 
     private void Shoot()
@@ -88,7 +100,7 @@ public class PlayerController : MonoBehaviour
         
         var bullet = GameObject.Instantiate(bulletPrefab, 
             transform.position + (Vector3)shootDirection * bulletSpawnOffset, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletVeloity;
+        bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletVelocity;
         StartCoroutine(StartCooldown());
     }
     
