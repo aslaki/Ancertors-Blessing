@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     public float bulletSpawnOffset = 0.5f;
     public float bulletVelocity = 2.0f;
     
+    public string animation_walk = "PlayerWalk";
+    public string animation_idle = "PlayerIdle";
+
+    public Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -75,20 +80,25 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         var newVelocity = new Vector2(0, 0);
+        var isMoving = false;
         if (isDownPressed)
         {
             newVelocity.y = -velocity.y;
+            isMoving = true;
         }else if (isUpPressed)
         {
             newVelocity.y = velocity.y;
+            isMoving = true;
         }
 
         if (isRightPressed)
         {
             newVelocity.x = velocity.x;
+            isMoving = true;
         }else if (isLeftPressed)
         {
             newVelocity.x = -velocity.x;
+            isMoving = true;
         }
         body.velocity = newVelocity;
         // Flip sprite based on direction
@@ -100,7 +110,10 @@ public class PlayerController : MonoBehaviour
         else
             transform.localScale = new Vector3(MathF.Abs(scale.x), 
                 scale.y, scale.z);
-        
+        if(isMoving)
+            animator.SetBool("IsWalking", true);
+        else
+            animator.SetBool("IsWalking", false);
     }
 
     private void Shoot()
