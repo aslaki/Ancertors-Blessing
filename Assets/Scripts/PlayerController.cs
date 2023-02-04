@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void IncreaseFireRate() {
-        
+        weaponCooldownDuration = weaponCooldownDuration*0.6f;
     }
 
     public void Heal(){
