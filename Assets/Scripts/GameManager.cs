@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         for (int i=0; i<levelUpSkills.Length; i++){
-            levelUpSkills[i].SetActive(true);
+            levelUpSkills[i].SetActive(false);
         }
         currentRound = 1;
         uiManager = FindObjectOfType<UIManager>();
