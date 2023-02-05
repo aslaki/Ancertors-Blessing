@@ -60,7 +60,9 @@ public class EnemyDrone : MonoBehaviour
     {
         isWeaponOnCooldown = true;
         animator.SetTrigger("Attack");
+
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Drone_Attack", gameObject);
+
         yield return new WaitForSeconds(shootDelay);
         var directionVector = (targetDestination.position - transform.position).normalized;
         var bullet = Instantiate(bulletPrefab, 
@@ -69,7 +71,6 @@ public class EnemyDrone : MonoBehaviour
         var bulletBody = bullet.GetComponent<Rigidbody2D>();
         bulletBody.velocity = directionVector * bulletVelocity;
         
-
         yield return new WaitForSeconds(weaponCooldownDuration);
         isWeaponOnCooldown = false;
 
