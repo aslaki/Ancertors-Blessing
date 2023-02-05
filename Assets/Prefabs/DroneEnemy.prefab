@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8384762236827684746}
   - component: {fileID: 8141824543977577353}
   - component: {fileID: 525733872}
+  - component: {fileID: 2691712377259056339}
   m_Layer: 0
   m_Name: DroneEnemy
   m_TagString: Enemy
@@ -123,7 +124,7 @@ MonoBehaviour:
   CurrentHP: 1
   speed: 2
   attackRange: 5
-  animator: {fileID: 0}
+  animator: {fileID: 8384762236827684746}
   bulletPrefab: {fileID: 1459362005464998262, guid: 952ff381bf2aa344ea151319bd48d401, type: 3}
   bulletSpawnOffset: {x: 0.2, y: 0.2}
   bulletVelocity: 3
@@ -150,3 +151,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &2691712377259056339
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384762236827684744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2, y: 0.1}
+  m_Direction: 0

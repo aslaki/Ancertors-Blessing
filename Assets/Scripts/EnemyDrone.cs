@@ -8,7 +8,7 @@ public class EnemyDrone : MonoBehaviour
 
     public int MaxHP = 1;
 
-    public int CurrentHP = 1;
+    public int CurrentHP;
     
     public float speed;
     public float attackRange;
@@ -27,6 +27,7 @@ public class EnemyDrone : MonoBehaviour
     {
         targetDestination = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         body = GetComponent<Rigidbody2D>();
+        CurrentHP=MaxHP;
     }
 
     // Update is called once per frame
@@ -53,7 +54,6 @@ public class EnemyDrone : MonoBehaviour
 
     private void Shoot()
     {
-        Debug.Log("Drone shoot");
         var directionVector = (targetDestination.position - transform.position).normalized;
         var bullet = Instantiate(bulletPrefab, 
             transform.position.ToVector2() + 
@@ -90,5 +90,15 @@ public class EnemyDrone : MonoBehaviour
     {
         var distance = Vector3.Distance(transform.position, targetDestination.position);
         return distance <= attackRange;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        CurrentHP -= damage;
+        if (CurrentHP <= 0)
+        {
+            //TODO: play anim and then destroy
+            Destroy(gameObject);
+        }
     }
 }
