@@ -66,6 +66,7 @@ public class MeleeEnemy : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Human_Hit", gameObject);
             isDead = true;
             rgdbd2d.velocity = Vector2.zero;
+            rgdbd2d.constraints = RigidbodyConstraints2D.FreezeAll;
             animator.SetBool("IsDying", true);
             StartCoroutine(Die());
         }

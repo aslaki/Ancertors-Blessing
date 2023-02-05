@@ -104,6 +104,8 @@ public class EnemyDrone : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Drone_Hit", gameObject);
             isDead = true;
+            body.velocity = Vector2.zero;
+            body.constraints = RigidbodyConstraints2D.FreezeAll;
             animator.SetBool("IsDying", true);
             StartCoroutine(Die());
         }
