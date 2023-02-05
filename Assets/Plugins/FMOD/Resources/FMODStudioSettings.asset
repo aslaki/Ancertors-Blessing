@@ -297,15 +297,15 @@ MonoBehaviour:
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
-  AutomaticEventLoading: 1
-  BankLoadType: 0
+  AutomaticEventLoading: 0
+  BankLoadType: 2
   AutomaticSampleLoading: 0
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: FMODBanks
   TargetBankFolder: 
   EventLinkage: 0
-  LoggingLevel: 2
+  LoggingLevel: 0
   SpeakerModeSettings: []
   SampleRateSettings: []
   LiveUpdateSettings: []
@@ -314,7 +314,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Desktop/Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
