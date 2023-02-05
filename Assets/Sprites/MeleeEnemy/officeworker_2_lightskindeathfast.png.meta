@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1086c3281229346399bba8ad814c09d1
+guid: d98b03f1342eaab40bfbabbda09e913c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_0
+      name: officeworker_2_lightskindeathfast_0
       rect:
         serializedVersion: 2
         x: 8
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c97d9a4b9df24eb991fe4c4135019d9
-      internalID: -864200057
+      spriteID: 8fcb525ce1aed0543b96d4e8284d7f4c
+      internalID: 1274220891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_1
+      name: officeworker_2_lightskindeathfast_1
       rect:
         serializedVersion: 2
         x: 48
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27dee63901a5f4d53a7e30312af0097a
-      internalID: 388839391
+      spriteID: 300fbcf5b5b276542bcb89b889bfe24f
+      internalID: 1151197182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_2
+      name: officeworker_2_lightskindeathfast_2
       rect:
         serializedVersion: 2
         x: 89
@@ -173,38 +173,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3369e20353cfc4679b64643f6496992e
-      internalID: -1356986655
+      spriteID: 8d8ff61b2025c734fb68bb9161afe3fc
+      internalID: -631456961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_3
+      name: officeworker_2_lightskindeathfast_3
       rect:
         serializedVersion: 2
         x: 126
-        y: 2
-        width: 12
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8283e799f6e8e433299320484e7191b9
-      internalID: -319896975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_4
-      rect:
-        serializedVersion: 2
-        x: 163
         y: 2
         width: 13
         height: 33
@@ -215,17 +194,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2bbc94381ef04af99bb899833c028a7
-      internalID: 548902672
+      spriteID: 42574117649f3bf40b13769e1bee591a
+      internalID: -1751079261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_5
+      name: officeworker_2_lightskindeathfast_4
       rect:
         serializedVersion: 2
-        x: 198
+        x: 161
         y: 2
         width: 17
         height: 33
@@ -236,17 +215,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3298bf7d756049e6acb5f9108440324
-      internalID: -302193887
+      spriteID: cf4993c40f2eafe46b31c1c48364f7c8
+      internalID: 851023946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_6
+      name: officeworker_2_lightskindeathfast_5
       rect:
         serializedVersion: 2
-        x: 235
+        x: 198
         y: 1
         width: 17
         height: 37
@@ -257,17 +236,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3f4cd3b6fc6a4164af339825f266632
-      internalID: 1152251557
+      spriteID: 7ae8a14a9e979c243964b9fd742c2247
+      internalID: 77681634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_7
+      name: officeworker_2_lightskindeathfast_6
       rect:
         serializedVersion: 2
-        x: 272
+        x: 235
         y: 1
         width: 16
         height: 37
@@ -278,17 +257,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b749b937774e14847b5128cc27e715e3
-      internalID: -647623199
+      spriteID: 13e2d5bee8b855c4382ee9c1c8cfd7d4
+      internalID: 646773320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_8
+      name: officeworker_2_lightskindeathfast_7
       rect:
         serializedVersion: 2
-        x: 308
+        x: 271
         y: 1
         width: 17
         height: 37
@@ -299,17 +278,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de508425cbc7842d0aea96198729eb92
-      internalID: -1850740059
+      spriteID: 960e1066d1befb945b7f0d9393ef1db4
+      internalID: 1143521600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_9
+      name: officeworker_2_lightskindeathfast_8
       rect:
         serializedVersion: 2
-        x: 345
+        x: 308
         y: 1
         width: 17
         height: 41
@@ -320,17 +299,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb8b54175f21a44d695652f9a4236780
-      internalID: 1406225486
+      spriteID: eae341a909acf5a43b0936842d140d5a
+      internalID: -1468224949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_10
+      name: officeworker_2_lightskindeathfast_9
       rect:
         serializedVersion: 2
-        x: 377
+        x: 340
         y: 1
         width: 26
         height: 41
@@ -341,17 +320,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed5d2834a76894bf5b3787a56af5e1dc
-      internalID: 540502595
+      spriteID: 86a1f85dbc7738e4ea34505cc158efb0
+      internalID: 1070818665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_11
+      name: officeworker_2_lightskindeathfast_10
       rect:
         serializedVersion: 2
-        x: 412
+        x: 375
         y: 1
         width: 29
         height: 41
@@ -362,20 +341,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af59e7c58d3204ea0bd95a29862a9380
-      internalID: 943336898
+      spriteID: f30ea9e2439a6db4d855f55268821e7d
+      internalID: 1643908952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_12
+      name: officeworker_2_lightskindeathfast_11
       rect:
         serializedVersion: 2
-        x: 449
+        x: 410
         y: 1
-        width: 30
-        height: 41
+        width: 32
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,14 +362,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 715b859e86d3c4986b4ac6d2751cb929
-      internalID: 1836351050
+      spriteID: 02c1671ce8195a544bd6c818c2c94a2c
+      internalID: -1246558122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_13
+      name: officeworker_2_lightskindeathfast_12
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15e1e13024fbe944af6f02ee6d20081
+      internalID: -646784650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: officeworker_2_lightskindeathfast_13
       rect:
         serializedVersion: 2
         x: 484
@@ -404,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f8141ec979041648303ffb54bde194
-      internalID: 2065655680
+      spriteID: 9d276a905b7a2db4fb24570c60623a90
+      internalID: 354764805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_14
+      name: officeworker_2_lightskindeathfast_14
       rect:
         serializedVersion: 2
         x: 521
@@ -425,197 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18beb693d3e7c4203b9a8ca307752ec2
-      internalID: -366978281
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_15
-      rect:
-        serializedVersion: 2
-        x: 558
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe0e699c1316f425fa3e91ec34a18498
-      internalID: -780265022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_16
-      rect:
-        serializedVersion: 2
-        x: 595
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 916dc40fe9c6741d89f52e339ed31944
-      internalID: -1001001294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_17
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b07d1bff7c6e44dbeb5097e948acd263
-      internalID: 1531304730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_18
-      rect:
-        serializedVersion: 2
-        x: 669
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eee8b54e4a2ac49378c1924e6323aba2
-      internalID: 737131935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_19
-      rect:
-        serializedVersion: 2
-        x: 706
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f9923e3adbc94c1b9e839f4b34ffcfd
-      internalID: 221636258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_20
-      rect:
-        serializedVersion: 2
-        x: 743
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f0e5a09ed47c486f9dd5470c146fd89
-      internalID: 316639041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_21
-      rect:
-        serializedVersion: 2
-        x: 780
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd8e4514c0cf24a0d801011af9b34bfc
-      internalID: -598622122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_22
-      rect:
-        serializedVersion: 2
-        x: 817
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95e162878bab9434ea8569e1387736a2
-      internalID: -1771382456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_officeworker_2_lightskindeath_23
-      rect:
-        serializedVersion: 2
-        x: 854
-        y: 1
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70b5fea78d89e405ea39f836c9eeccbc
-      internalID: -1763042967
+      spriteID: eb92e3b1a012d2e46ab0730fbdc15834
+      internalID: 717721481
       vertices: []
       indices: 
       edges: []
@@ -631,30 +442,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      enemy_officeworker_2_lightskindeath_3: -319896975
-      enemy_officeworker_2_lightskindeath_2: -1356986655
-      enemy_officeworker_2_lightskindeath_12: 1836351050
-      enemy_officeworker_2_lightskindeath_10: 540502595
-      enemy_officeworker_2_lightskindeath_9: 1406225486
-      enemy_officeworker_2_lightskindeath_16: -1001001294
-      enemy_officeworker_2_lightskindeath_17: 1531304730
-      enemy_officeworker_2_lightskindeath_5: -302193887
-      enemy_officeworker_2_lightskindeath_13: 2065655680
-      enemy_officeworker_2_lightskindeath_4: 548902672
-      enemy_officeworker_2_lightskindeath_23: -1763042967
-      enemy_officeworker_2_lightskindeath_0: -864200057
-      enemy_officeworker_2_lightskindeath_15: -780265022
-      enemy_officeworker_2_lightskindeath_20: 316639041
-      enemy_officeworker_2_lightskindeath_6: 1152251557
-      enemy_officeworker_2_lightskindeath_1: 388839391
-      enemy_officeworker_2_lightskindeath_11: 943336898
-      enemy_officeworker_2_lightskindeath_7: -647623199
-      enemy_officeworker_2_lightskindeath_22: -1771382456
-      enemy_officeworker_2_lightskindeath_8: -1850740059
-      enemy_officeworker_2_lightskindeath_14: -366978281
-      enemy_officeworker_2_lightskindeath_18: 737131935
-      enemy_officeworker_2_lightskindeath_19: 221636258
-      enemy_officeworker_2_lightskindeath_21: -598622122
+      officeworker_2_lightskindeathfast_11: -1246558122
+      officeworker_2_lightskindeathfast_0: 1274220891
+      officeworker_2_lightskindeathfast_5: 77681634
+      officeworker_2_lightskindeathfast_10: 1643908952
+      officeworker_2_lightskindeathfast_7: 1143521600
+      officeworker_2_lightskindeathfast_8: -1468224949
+      officeworker_2_lightskindeathfast_3: -1751079261
+      officeworker_2_lightskindeathfast_13: 354764805
+      officeworker_2_lightskindeathfast_6: 646773320
+      officeworker_2_lightskindeathfast_4: 851023946
+      officeworker_2_lightskindeathfast_2: -631456961
+      officeworker_2_lightskindeathfast_1: 1151197182
+      officeworker_2_lightskindeathfast_14: 717721481
+      officeworker_2_lightskindeathfast_9: 1070818665
+      officeworker_2_lightskindeathfast_12: -646784650
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
