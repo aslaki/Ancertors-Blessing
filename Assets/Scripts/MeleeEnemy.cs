@@ -12,6 +12,9 @@ public class MeleeEnemy : MonoBehaviour
     public Animator animator;
     Rigidbody2D rgdbd2d;
 
+    public int MaxHP = 1;
+    public int CurrentHP;
+    
     private void Awake(){
         targetDestination = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rgdbd2d = GetComponent<Rigidbody2D>();
@@ -51,6 +54,15 @@ public class MeleeEnemy : MonoBehaviour
     {
         if(other.gameObject.GetComponent<PlayerController>()){
             animator.SetBool("IsAttacking", false);
+        }
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        CurrentHP -= damage;
+        if (CurrentHP <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
