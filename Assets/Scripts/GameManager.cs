@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     
     public UIManager uiManager;
     public EnemySpawner enemySpawner;
+    public float enemySpawnTimer;
 
     public GameObject[] Enemies;
 
@@ -47,10 +48,10 @@ public class GameManager : MonoBehaviour
         uiManager.LevelTimerText = $"{minutes:00}:{seconds:00}";
         if (_spawnEnemyTimer.HasElapsed)
         {
-            _spawnEnemyTimer.Start(5f);
+            _spawnEnemyTimer.Start(enemySpawnTimer);
             var enemyIndex = 0;
             if(currentRound == 1) {
-                enemyIndex = Random.Range(0, Enemies.Length-1);
+                enemyIndex = Random.Range(0, 2);
             } else {
                 enemyIndex = Random.Range(0, Enemies.Length);
             }

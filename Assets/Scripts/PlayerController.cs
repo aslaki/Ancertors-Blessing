@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     public string animation_idle = "PlayerIdle";
 
     public Animator animator;
+
+    private SpriteRenderer playerSprite;
     
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,8 @@ public class PlayerController : MonoBehaviour
             playerCamera = Camera.main;
             Assert.IsNotNull(playerCamera);
         }
+
+        playerSprite = GetComponent<Transform>().GetChild(1).GetComponent<SpriteRenderer>();
 
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 

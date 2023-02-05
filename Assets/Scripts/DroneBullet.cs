@@ -1,14 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class DroneBullet : MonoBehaviour
 {
 
     public float lifeTimeSec = 5f;
-    public int damage = 1;
     private Timer _lifeTimer = new Timer();
+    private PlayerController playerController;
+
     void Start(){
         _lifeTimer.Start(lifeTimeSec);
     }
@@ -26,14 +26,13 @@ public class PlayerBullet : MonoBehaviour
         }
     }
     
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            if(other.gameObject.GetComponent<MeleeEnemy>()){
-                other.gameObject.GetComponent<MeleeEnemy>().TakeDamage(damage);
-            } else if (other.gameObject.GetComponent<EnemyDrone>()){
-                other.gameObject.GetComponent<EnemyDrone>().TakeDamage(damage);
+        if(collision.gameObject.GetComponent<PlayerController>()){
+            playerController = collision.gameObject.GetComponent<PlayerController>();
+            if(!playerController.isImmune)
+            {
+                playerController.TakeDamage();
             }
         }
         Destroy(gameObject);
