@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8141824543977577353}
   - component: {fileID: 525733872}
   - component: {fileID: 2691712377259056339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DroneEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -131,6 +131,7 @@ MonoBehaviour:
   weaponCooldownDuration: 3
   damage: 1
   deadAnimationTime: 1
+  shootDelay: 1.5
 --- !u!50 &525733872
 Rigidbody2D:
   serializedVersion: 4

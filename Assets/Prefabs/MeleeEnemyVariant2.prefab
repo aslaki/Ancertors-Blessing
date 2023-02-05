@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8178705199912621565}
   - component: {fileID: 8070957401602218738}
   - component: {fileID: 5907980688394494683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeEnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 6587364995684990916}
   - component: {fileID: 6587364995684990923}
   - component: {fileID: 6065371249696085885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeEnemyVariant2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
