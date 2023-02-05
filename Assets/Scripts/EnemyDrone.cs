@@ -52,13 +52,17 @@ public class EnemyDrone : MonoBehaviour
         
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
         var directionVector = (targetDestination.position - transform.position).normalized;
         var bullet = Instantiate(bulletPrefab, 
-            transform.position.ToVector2() + (bulletSpawnOffset * directionVector), Quaternion.identity);
+            transform.position.ToVector2() + 
+            (bulletSpawnOffset * directionVector), Quaternion.identity);
         var bulletBody = bullet.GetComponent<Rigidbody2D>();
         bulletBody.velocity = directionVector * bulletVelocity;
+        isWeaponOnCooldown = true;
+        yield return new WaitForSeconds(weaponCooldownDuration);
+        isWeaponOnCooldown = false;
 
     }
 
@@ -80,6 +84,6 @@ public class EnemyDrone : MonoBehaviour
     private bool IsInRange()
     {
         var distance = Vector3.Distance(transform.position, targetDestination.position);
-        return distance < attackRange;
+        return distance <= attackRange;
     }
 }
