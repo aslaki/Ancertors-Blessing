@@ -130,6 +130,7 @@ MonoBehaviour:
   bulletVelocity: 3
   weaponCooldownDuration: 3
   damage: 1
+  deadAnimationTime: 1
 --- !u!50 &525733872
 Rigidbody2D:
   serializedVersion: 4
