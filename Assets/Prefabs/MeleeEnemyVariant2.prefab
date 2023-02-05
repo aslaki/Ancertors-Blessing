@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   animator: {fileID: 5907980688394494683}
+  deadAnimationTime: 1
   MaxHP: 1
   CurrentHP: 0
 --- !u!70 &6065371249696085885
