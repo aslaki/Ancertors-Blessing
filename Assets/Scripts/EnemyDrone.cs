@@ -21,7 +21,7 @@ public class EnemyDrone : MonoBehaviour
     public float weaponCooldownDuration = 0.5f;
     public int damage = 1;
     
-    private bool isWeaponOnCooldown;
+    private bool isWeaponOnCooldown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,9 +40,8 @@ public class EnemyDrone : MonoBehaviour
         if (IsInRange())
         {
             if (!isWeaponOnCooldown)
-            {
                 Shoot();
-            }
+            body.velocity = Vector2.zero;
         }
         else
         {
@@ -52,18 +51,24 @@ public class EnemyDrone : MonoBehaviour
         
     }
 
-    private IEnumerator Shoot()
+    private void Shoot()
     {
+        Debug.Log("Drone shoot");
         var directionVector = (targetDestination.position - transform.position).normalized;
         var bullet = Instantiate(bulletPrefab, 
             transform.position.ToVector2() + 
             (bulletSpawnOffset * directionVector), Quaternion.identity);
         var bulletBody = bullet.GetComponent<Rigidbody2D>();
         bulletBody.velocity = directionVector * bulletVelocity;
+        StartCoroutine(StartCooldown());
+
+    }
+    
+    private IEnumerator StartCooldown()
+    {
         isWeaponOnCooldown = true;
         yield return new WaitForSeconds(weaponCooldownDuration);
         isWeaponOnCooldown = false;
-
     }
 
     private void Move()
