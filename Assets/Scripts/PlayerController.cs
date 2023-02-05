@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour
         currentHP -=1;
         GoImmune();
         RerenderHPUI();
-        if(currentHP >= 0)
+        if(currentHP <= 0)
         {
             gameManager.GameOver(false);
         }

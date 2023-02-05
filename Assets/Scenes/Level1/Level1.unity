@@ -10781,6 +10781,7 @@ MonoBehaviour:
   Enemies:
   - {fileID: 6587364995684990922, guid: 2d1d527d6dd333c4bb1abcc13ec6b1bf, type: 3}
   - {fileID: 6587364995684990922, guid: cf67a8837b475af4ea3180788d6f7e9d, type: 3}
+  - {fileID: 8384762236827684744, guid: 72ea81683d216464bbf4d9e936a05d5f, type: 3}
   currentRound: 0
   gameIsPaused: 0
   levelUpSkills:

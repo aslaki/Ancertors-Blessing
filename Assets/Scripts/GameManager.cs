@@ -47,9 +47,14 @@ public class GameManager : MonoBehaviour
         uiManager.LevelTimerText = $"{minutes:00}:{seconds:00}";
         if (_spawnEnemyTimer.HasElapsed)
         {
-            Debug.Log("Spawning enemy");
             _spawnEnemyTimer.Start(5f);
-            var enemyIndex = Random.Range(0, Enemies.Length);
+            var enemyIndex = 0;
+            if(currentRound == 1) {
+                enemyIndex = Random.Range(0, Enemies.Length-1);
+            } else {
+                enemyIndex = Random.Range(0, Enemies.Length);
+            }
+
             enemySpawner.SpawnEnemy(Enemies[enemyIndex]);
         }
 
@@ -103,18 +108,37 @@ public class GameManager : MonoBehaviour
     private void Victory(){
         Time.timeScale = 0;
         gameIsPaused = true;
-        StartCoroutine(LoadVictoryDeath("Victory"));
+        DestroyEnemies();
+        Time.timeScale = 1;
+        StartCoroutine(LoadVictory());
     }
 
     private void Loss(){
         Time.timeScale = 0;
         gameIsPaused = true;
-        StartCoroutine(LoadVictoryDeath("Loss"));
+        DestroyEnemies();
+        Time.timeScale = 1;
+        StartCoroutine(LoadLoss());
     }
 
-    private IEnumerator LoadVictoryDeath(string levelName)
+    private void DestroyEnemies(){
+        var  enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+     
+        for(var i = 0 ; i < enemies.Length ; i ++)
+        {
+            Destroy(enemies[i]);
+        }
+    }
+
+    private IEnumerator LoadVictory()
     {
         yield return new WaitForSeconds(1f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+    }
+
+    private IEnumerator LoadLoss()
+    {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Loss");
     }
 }
