@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 6587364995684990917}
   - component: {fileID: 6587364995684990916}
   - component: {fileID: 6587364995684990923}
-  - component: {fileID: 6587364995684990918}
+  - component: {fileID: 3261454630309850975}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: Untagged
@@ -175,8 +175,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   animator: {fileID: 5907980688394494683}
---- !u!58 &6587364995684990918
-CircleCollider2D:
+  MaxHP: 1
+  CurrentHP: 0
+--- !u!70 &3261454630309850975
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -189,5 +191,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.2, y: 0.5}
+  m_Direction: 0
