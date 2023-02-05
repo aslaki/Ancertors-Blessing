@@ -153,11 +153,11 @@ public class PlayerController : MonoBehaviour
     }
 
     public void IncreaseFireRate() {
-        weaponCooldownDuration = weaponCooldownDuration*0.6f;
+        weaponCooldownDuration = weaponCooldownDuration*0.5f;
     }
 
     public void Heal(){
-        if (currentHP <=6)
+        if (currentHP <= 6)
         {
             currentHP+=1;
             RerenderHPUI();
@@ -166,6 +166,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(){
         currentHP -=1;
+        GoImmune();
         RerenderHPUI();
         if(currentHP >= 0)
         {

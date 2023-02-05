@@ -101,10 +101,20 @@ public class GameManager : MonoBehaviour
     }
 
     private void Victory(){
-        Debug.Log("VICTORY!");
+        Time.timeScale = 0;
+        gameIsPaused = true;
+        StartCoroutine(LoadVictoryDeath("Victory"));
     }
 
     private void Loss(){
-        Debug.Log("LOSS!");
+        Time.timeScale = 0;
+        gameIsPaused = true;
+        StartCoroutine(LoadVictoryDeath("Loss"));
+    }
+
+    private IEnumerator LoadVictoryDeath(string levelName)
+    {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
     }
 }

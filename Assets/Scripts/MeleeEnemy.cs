@@ -42,10 +42,7 @@ public class MeleeEnemy : MonoBehaviour
             animator.SetBool("IsAttacking", true);
             if(!playerController.isImmune)
             {
-                playerController.currentHP-=1;
-                playerController.GoImmune();
-                Debug.Log(playerController.isImmune);
-                Debug.Log(playerController.currentHP);
+                playerController.TakeDamage();
             }
         }
     }
