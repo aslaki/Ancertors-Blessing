@@ -65,11 +65,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isUpPressed = Input.GetKey(KeyCode.UpArrow);
-        isDownPressed = Input.GetKey(KeyCode.DownArrow);
-        isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
-        isRightPressed = Input.GetKey(KeyCode.RightArrow);
-        isShootBtnPressed = Input.GetKey(KeyCode.Space);
+        isUpPressed = Input.GetKey(KeyCode.W);
+        isDownPressed = Input.GetKey(KeyCode.S);
+        isLeftPressed = Input.GetKey(KeyCode.A);
+        isRightPressed = Input.GetKey(KeyCode.D);
+        isShootBtnPressed = Input.GetKey(KeyCode.Mouse0);
         
         var mousePosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
         var position = transform.position.ToVector2();
