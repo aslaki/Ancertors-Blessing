@@ -70,6 +70,7 @@ MonoBehaviour:
   animation_walk: PlayerWalk
   animation_idle: PlayerIdle
   animator: {fileID: 5265273763813362802}
+  damageColor: {r: 0.23584908, g: 0.052064788, b: 0.052064788, a: 0}
 --- !u!50 &8362913328174947196
 Rigidbody2D:
   serializedVersion: 4
