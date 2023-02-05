@@ -20,8 +20,10 @@ public class EnemyDrone : MonoBehaviour
     public float bulletVelocity = 2.0f;
     public float weaponCooldownDuration = 0.5f;
     public int damage = 1;
-    
+    public float deadAnimationTime;
     private bool isWeaponOnCooldown = false;
+    public float shootDelay = 1.5f;
+    private bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +40,12 @@ public class EnemyDrone : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDead)
+            return;
         if (IsInRange())
         {
             if (!isWeaponOnCooldown)
-                Shoot();
+                StartCoroutine(Shoot());
             body.velocity = Vector2.zero;
         }
         else
@@ -52,26 +56,26 @@ public class EnemyDrone : MonoBehaviour
         
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
+        isWeaponOnCooldown = true;
+        animator.SetTrigger("Attack");
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Drone_Attack", gameObject);
+
+        yield return new WaitForSeconds(shootDelay);
         var directionVector = (targetDestination.position - transform.position).normalized;
         var bullet = Instantiate(bulletPrefab, 
             transform.position.ToVector2() + 
             (bulletSpawnOffset * directionVector), Quaternion.identity);
         var bulletBody = bullet.GetComponent<Rigidbody2D>();
         bulletBody.velocity = directionVector * bulletVelocity;
-        StartCoroutine(StartCooldown());
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Drone_Attack", gameObject);
+        
+        yield return new WaitForSeconds(weaponCooldownDuration);
+        isWeaponOnCooldown = false;
 
     }
     
-    private IEnumerator StartCooldown()
-    {
-        isWeaponOnCooldown = true;
-        yield return new WaitForSeconds(weaponCooldownDuration);
-        isWeaponOnCooldown = false;
-    }
-
     private void Move()
     {
         var directionVector = (targetDestination.position - transform.position).normalized;
@@ -99,8 +103,15 @@ public class EnemyDrone : MonoBehaviour
         if (CurrentHP <= 0)
         {
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Drone_Hit", gameObject);
-            //TODO: play anim and then destroy
-            Destroy(gameObject);
+            isDead = true;
+            animator.SetBool("IsDying", true);
+            StartCoroutine(Die());
         }
+    }
+    private IEnumerator Die()
+    {
+        // TODO: Should probably use animator here to check if finished
+        yield return new WaitForSeconds(deadAnimationTime);
+        Destroy(gameObject);
     }
 }
