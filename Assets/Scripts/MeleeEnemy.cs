@@ -31,10 +31,10 @@ public class MeleeEnemy : MonoBehaviour
         var facingDirection = Utils.GetHorizontalDirection(directionVector);
         var scale = transform.localScale;
         if (facingDirection == Utils.Direction.Left)
-            transform.localScale = new Vector3(-1 * MathF.Abs(scale.x), 
+            transform.localScale = new Vector3( MathF.Abs(scale.x), 
                 scale.y, scale.z);
         else
-            transform.localScale = new Vector3(MathF.Abs(scale.x), 
+            transform.localScale = new Vector3(-1 * MathF.Abs(scale.x), 
                 scale.y, scale.z);
         
         rgdbd2d.velocity = directionVector * speed;
