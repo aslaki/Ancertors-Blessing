@@ -39,9 +39,9 @@ public class PlayerController : MonoBehaviour
     public string animation_idle = "PlayerIdle";
 
     public Animator animator;
-
+    public Color damageColor;
     private SpriteRenderer playerSprite;
-    
+    private Color originalColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour
             playerCamera = Camera.main;
             Assert.IsNotNull(playerCamera);
         }
-
+        
         playerSprite = GetComponent<Transform>().GetChild(1).GetComponent<SpriteRenderer>();
-
+        originalColor = playerSprite.color;
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
         isImmune = false;
@@ -183,11 +183,23 @@ public class PlayerController : MonoBehaviour
     public void GoImmune()
     {
         StartCoroutine(ImmunityControl());
+        StartCoroutine(DamageIndicator());
     }
 
     private IEnumerator ImmunityControl(){
         isImmune = true;
         yield return new WaitForSeconds(immuneForSeconds);
         isImmune = false;
+    }
+
+    private IEnumerator DamageIndicator()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            playerSprite.color = damageColor;
+            yield return new WaitForSeconds(0.1f);
+            playerSprite.color = originalColor;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
