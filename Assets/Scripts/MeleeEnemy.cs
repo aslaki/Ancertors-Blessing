@@ -18,6 +18,7 @@ public class MeleeEnemy : MonoBehaviour
     private void Awake(){
         targetDestination = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rgdbd2d = GetComponent<Rigidbody2D>();
+        CurrentHP = MaxHP;
     }
 
 
@@ -59,6 +60,7 @@ public class MeleeEnemy : MonoBehaviour
         CurrentHP -= damage;
         if (CurrentHP <= 0)
         {
+            //TODO: play anim and then destroy
             Destroy(gameObject);
         }
     }

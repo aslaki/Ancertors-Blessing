@@ -9,13 +9,10 @@ public class PlayerBullet : MonoBehaviour
     public float lifeTimeSec = 5f;
     public int damage = 1;
     private Timer _lifeTimer = new Timer();
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start(){
+        _lifeTimer.Start(lifeTimeSec);
     }
 
-    // Update is called once per frame
     void Update()
     {
         _lifeTimer.Update(Time.deltaTime);
@@ -31,8 +28,10 @@ public class PlayerBullet : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("collide");
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("ENEMY GOT HIT!");
             other.gameObject.GetComponent<MeleeEnemy>().TakeDamage(damage);
         }
         Destroy(gameObject);
