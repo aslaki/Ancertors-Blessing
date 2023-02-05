@@ -61,6 +61,7 @@ public class EnemyDrone : MonoBehaviour
         var bulletBody = bullet.GetComponent<Rigidbody2D>();
         bulletBody.velocity = directionVector * bulletVelocity;
         StartCoroutine(StartCooldown());
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Drone_Attack", gameObject);
 
     }
     
@@ -97,6 +98,7 @@ public class EnemyDrone : MonoBehaviour
         CurrentHP -= damage;
         if (CurrentHP <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Drone_Hit", gameObject);
             //TODO: play anim and then destroy
             Destroy(gameObject);
         }

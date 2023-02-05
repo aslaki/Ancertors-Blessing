@@ -135,6 +135,7 @@ public class PlayerController : MonoBehaviour
             transform.position + (Vector3)shootDirection * bulletSpawnOffset, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletVelocity;
         StartCoroutine(StartCooldown());
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Player_Attack", gameObject);
     }
     
     // Process weapon cooldown
@@ -172,6 +173,7 @@ public class PlayerController : MonoBehaviour
         currentHP -=1;
         GoImmune();
         RerenderHPUI();
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Player_Hit", gameObject);
         if(currentHP <= 0)
         {
             gameManager.GameOver(false);

@@ -60,6 +60,7 @@ public class MeleeEnemy : MonoBehaviour
         CurrentHP -= damage;
         if (CurrentHP <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Enemy_Human_Hit", gameObject);
             //TODO: play anim and then destroy
             Destroy(gameObject);
         }
